@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Naming things is a hard problem</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/jumbotron-narrow.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Mnemonic-as-a-Service</h3>
+      </div>
+
+      <div class="jumbotron">
+{% if headline %}
+<h1>{{ headline }}</h1>
+{% else %}
+<h1>Naming things is hard</h1>
+{% endif %}
+        <p class="lead">Click below to generate a new codename for your project, release, or even offspring.</p>
+        <p><a class="btn btn-lg btn-success" href="/" role="button">Generate</a></p>
+      </div>
+      <div class="row marketing">
+          <blockquote>
+              <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+              <small>Phil Karlton</small>
+          </blockquote>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>The wordlist</h4>
+          <p>Oren Tirosh created a wordlist of unique, short words that could be used universally for verbally encoding information.  He described it as the mnemonic encoding project and the resulting 1626 words are great for all kinds of things.</p>
+
+          <h4>Json/Curl</h4>
+          <p>This service is also available for use in scripts. <pre>curl -L http://mnemonic-as-a-service.com/api/17</pre></p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; Company 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
