@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 tests_require = [
     'django',
@@ -29,8 +29,8 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
     ],
-    packages=[
-        'django_mnemonic',
-        'django_mnemonic_website',
-    ],
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires = [],
+    zip_safe=False,
 )
