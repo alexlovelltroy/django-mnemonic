@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django_mnemonic',
     'django_mnemonic_website',
     'storages',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
