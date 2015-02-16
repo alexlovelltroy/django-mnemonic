@@ -24,7 +24,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['mnemonic-as-a-service.com' ]
+ALLOWED_HOSTS = ['localhost', 'mnemonic-as-a-service.com' ]
 
 
 # Application definition
