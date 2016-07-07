@@ -1,4 +1,4 @@
-package mnemonic
+package main
 
 var wordlist = [...]string{"acrobat", "africa", "alaska", "albert", "albino", "album",
 	"alcohol", "alex", "alpha", "amadeus", "amanda", "amazon",

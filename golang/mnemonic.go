@@ -1,1 +1,1 @@
-package mnemonic
+package main
