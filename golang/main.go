@@ -1,17 +1,19 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gin-gonic/gin"
 )
 
-func index(c *gin.Context) {
-	content := gin.H{"Hello": "World"}
-	c.JSON(200, content)
+func getColor() string {
+	return os.Getenv("COLOR")
 }
 
 func main() {
 	app := gin.Default()
 	app.GET("/", index)
+	app.GET("/mnemonic", index)
 	app.GET("/mnemonic/:count", RandomWord)
 	app.Run(":8000")
 }
