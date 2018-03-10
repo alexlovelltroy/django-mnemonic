@@ -1,5 +1,5 @@
 COLOR := $(shell git rev-parse HEAD | cut -c 1-6)
-DOCKER_IMAGE ?= alexlovelltroy/rainbow-mnemonic
+DOCKER_IMAGE ?= rainbow-mnemonic
 
 .PHONY: build
 build: rainbow-mnemonic

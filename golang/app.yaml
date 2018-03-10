@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: rainbow-deploy
-        image: gcr.io/maas-kube-rainbow/alexlovelltroy/rainbow-mnemonic:__COLOR__
+        image: gcr.io/maas-kube-rainbow/rainbow-mnemonic:__COLOR__
         ports:
         - containerPort: 8080
