@@ -30,3 +30,4 @@ submit-gcloud:
 .PHONY: install
 install:
 	cat app.yaml | sed s/__COLOR__/$(COLOR)/g | kubectl apply -f -
+	kubectl expose deployment $(DOCKER_IMAGE)-$(COLOR) --type "LoadBalancer"

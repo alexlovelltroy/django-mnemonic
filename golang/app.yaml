@@ -7,11 +7,10 @@ spec:
   selector:
     app: rainbow-mnemonic
     # this is the key here - it allows us to match only pods of the currently active color
-    color: __COLOR__
+    color: "__COLOR__"
   ports:
   - protocol: TCP
     port: 8080
-    nodePort: 31080
     name: http
 
 ---
@@ -30,7 +29,7 @@ spec:
     metadata:
       labels:
         app: rainbow-mnemonic
-        color: __COLOR__
+        color: "__COLOR__"
     spec:
       containers:
       - name: rainbow-deploy
