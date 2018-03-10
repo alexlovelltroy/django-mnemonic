@@ -1,5 +1,6 @@
 COLOR := $(shell git rev-parse HEAD | cut -c 1-6)
 DOCKER_IMAGE ?= rainbow-mnemonic
+GCLOUD_PROJECT ?= maas-kube-rainbow
 
 .PHONY: build
 build: rainbow-mnemonic
@@ -10,7 +11,7 @@ rainbow-mnemonic: main.go
 .PHONY: image
 image:
 	@echo Building with color $(COLOR)
-	COLOR=$(COLOR) docker build . -t $(DOCKER_IMAGE):$(COLOR) --build-arg COLOR=$(COLOR) -f Dockerfile.golang
+	COLOR=$(COLOR) docker build . -t $(DOCKER_IMAGE):$(COLOR) --build-arg COLOR=$(COLOR) -f Dockerfile
 
 .PHONY: push
 push: image
@@ -18,12 +19,12 @@ push: image
 
 .PHONY: push-gcloud
 push-gcloud: 
-	docker tag $(DOCKER_IMAGE):$(COLOR) gcr.io/maas-kube-rainbow/$(DOCKER_IMAGE):$(COLOR)
-	gcloud docker -- push gcr.io/maas-kube-rainbow/$(DOCKER_IMAGE):$(COLOR)
+	docker tag $(DOCKER_IMAGE):$(COLOR) gcr.io/$(GCLOUD_PROJECT)/$(DOCKER_IMAGE):$(COLOR)
+	gcloud docker -- push gcr.io/$(GCLOUD_PROJECT)/$(DOCKER_IMAGE):$(COLOR)
 
 .PHONY: submit-gcloud
 submit-gcloud: 
-	gcloud container builds submit --tag gcr.io/maas-kube-rainbow/$(DOCKER_IMAGE):$(COLOR) .
+	gcloud container builds submit --tag gcr.io/$(GCLOUD_PROJECT)/$(DOCKER_IMAGE):$(COLOR) .
 
 
 .PHONY: install
