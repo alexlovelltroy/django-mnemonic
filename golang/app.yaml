@@ -15,7 +15,7 @@ spec:
     name: http
 
 ---
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: rainbow-mnemonic-__COLOR__
@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: rainbow-deploy
-        image: alexlovelltroy/rainbow-mnemonic:__COLOR__
+        image: gcr.io/maas-kube-rainbow/alexlovelltroy/rainbow-mnemonic:__COLOR__
         ports:
         - containerPort: 8080
