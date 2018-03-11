@@ -31,3 +31,11 @@ submit-gcloud:
 install:
 	cat app.yaml | sed s/__COLOR__/$(COLOR)/g | kubectl apply -f -
 	kubectl expose deployment $(DOCKER_IMAGE)-$(COLOR) --type "LoadBalancer"
+
+.PHONY: setup-gcloud
+setup-gcloud:
+	gcloud config set project $(GCLOUD_PROJECT)
+	gcloud auth login
+	gcloud config set compute/zone us-east4-a
+	gcloud container clusters create test-cluster
+	gcloud container clusters get-credentials test-cluster
