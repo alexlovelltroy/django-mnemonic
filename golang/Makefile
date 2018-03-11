@@ -34,6 +34,13 @@ install:
 
 .PHONY: setup-gcloud
 setup-gcloud:
+# I followed the quickstart guides from GCP to:
+#   * Set up a container registry
+#	  https://cloud.google.com/container-registry/docs/quickstart
+#   * Set up triggered builds of my containers
+#	  https://cloud.google.com/container-builder/docs/quickstart-docker
+#   * Set up a GKE cluster and run deployments
+#	  https://cloud.google.com/kubernetes-engine/docs/quickstart
 	gcloud config set project $(GCLOUD_PROJECT)
 	gcloud auth login
 	gcloud config set compute/zone us-east4-a
